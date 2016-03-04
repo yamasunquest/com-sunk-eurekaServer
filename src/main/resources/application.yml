@@ -1,0 +1,21 @@
+#服务端口
+server:
+  port: 8761
+
+  #配置中心地址
+  #cloud:
+  #  config:
+  #    uri:http://localhost:8888
+  #spring.cloud.config.discovery.enabled: true
+  
+#eureka服务配置
+eureka:
+  instance:
+    hostname: 172.28.186.251
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  #server:
+  #  waitTimeInMsWhenSyncEmpty: 0
